@@ -41,7 +41,7 @@ module.exports.loop = function () {
     //     }
 
        
-    }
+    //}
     
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
@@ -154,4 +154,4 @@ module.exports.loop = function () {
 //         delete Memory.creeps[i];
 //     }
 // }
-//}
+}
