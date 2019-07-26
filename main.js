@@ -5,7 +5,7 @@ var roleRepair = require('role.repair');
 var roleReloader = require('role.reloader');
 var roleFastHarvester = require('role.fastharvester');
 var roleClaimer = require('role.claimer');
-var roleGuard = require('role.guard');
+//var roleGuard = require('role.guard');
 
 module.exports.loop = function () {
 
@@ -48,7 +48,7 @@ module.exports.loop = function () {
     var upraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     var repairs = _.filter(Game.creeps, (creep) => creep.memory.role == 'repair');
     var reloaders = _.filter(Game.creeps, (creep) => creep.memory.role == 'reloader');
-    var guards = _.filter(Game.creeps, (creep) => creep.memory.role == 'guard');
+    //var guards = _.filter(Game.creeps, (creep) => creep.memory.role == 'guard');
     var fastharvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'fastharvester');
     var energyInRoom = Game.rooms["W35N39"].energyAvailable;
     
@@ -72,10 +72,10 @@ module.exports.loop = function () {
         var newName = Game.spawns.Spawn.createCreep([WORK,CARRY,CARRY,MOVE], undefined, {role: 'repair', source:0});
         console.log('Spawning new repair: ' + newName);
     }
-    else if (guards.length < 3  && energyInRoom > 500){
-        var newName = Game.spawns.Spawn.createCreep([TOUGH,TOUGH,TOUGH,ATTACK,ATTACK,ATTACK,ATTACK,MOVE,MOVE,MOVE], undefined, {role: 'guard', source:0});
-        console.log('Spawning new guard: ' + newName);
-    }
+//     else if (guards.length < 3  && energyInRoom > 500){
+//         var newName = Game.spawns.Spawn.createCreep([TOUGH,TOUGH,TOUGH,ATTACK,ATTACK,ATTACK,ATTACK,MOVE,MOVE,MOVE], undefined, {role: 'guard', source:0});
+//         console.log('Spawning new guard: ' + newName);
+//     }
     else if(reloaders.length < 1 && Game.spawns.Spawn.energy > 250) {
         var newName = Game.spawns.Spawn.createCreep([WORK,CARRY,CARRY,MOVE], undefined, {role: 'reloader', source:0});
         console.log('Spawning new reloader: ' + newName);
